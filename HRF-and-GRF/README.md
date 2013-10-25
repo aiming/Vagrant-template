@@ -15,26 +15,26 @@ Installation
 
 1. install vagrant plugin.
 
-```
+  ```
 > vagrant plugin install vagrant-berkshelf
 > vagrant plugin install vagrant-omnibus
 ```
 
 2. install gems
 
-```
+  ```
 > bundle ins --path vendor/bundle
 ```
 
 3. cookbook setup
 
-```
+  ```
 > bundle ex berks install --path cookbooks
 ```
 
 4. vagrant up and provision
 
-```
+  ```
 > vagrant up
 > vagrant provision
 ```
