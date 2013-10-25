@@ -1,0 +1,46 @@
+{
+  "sources": {
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "git": {
+      "locked_version": "2.5.2"
+    },
+    "perlbrew": {
+      "locked_version": "0.1.0",
+      "git": "git://github.com/aiming-cookbooks/perlbrew.git",
+      "ref": "124e03e6711ff6df598d4d1e32b56a8a371e4fe5"
+    },
+    "hrforecast": {
+      "locked_version": "0.1.0",
+      "git": "git://github.com/aiming-cookbooks/hrforecast.git",
+      "ref": "93338f3540799689ae7bc3aa993a985697a6e0c5"
+    },
+    "growthforecast": {
+      "locked_version": "0.1.0",
+      "git": "git://github.com/aiming-cookbooks/growthforecast.git",
+      "ref": "7b43acf1ecba9d43c0a14f02780320d0853f063c"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "dmg": {
+      "locked_version": "2.0.4"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.3.0"
+    }
+  }
+}

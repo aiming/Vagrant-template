@@ -1,0 +1,9 @@
+site :opscode
+
+cookbook 'mysql'
+cookbook 'yum'
+cookbook 'git'
+
+cookbook 'perlbrew', github: 'aiming-cookbooks/perlbrew'
+cookbook 'hrforecast', github: 'aiming-cookbooks/hrforecast'
+cookbook 'growthforecast', github: 'aiming-cookbooks/growthforecast'

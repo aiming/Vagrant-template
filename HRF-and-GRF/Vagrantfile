@@ -1,0 +1,41 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "CentOS_6.4_x86_64"
+  config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130731.box"
+
+  config.vm.network :private_network, ip: "192.168.33.15"
+  config.ssh.forward_agent = true
+
+  if Object.const_defined?(:Berkshelf)
+    config.berkshelf.enabled = false
+  end
+
+  config.vm.provider :virtualbox do |vb|
+    # Don't boot with headless mode
+    vb.gui = false
+  
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize [
+      "modifyvm", :id, 
+      "--memory", "1024",
+      "--cpus", "2",
+      "--cpuexecutioncap", "75"
+    ]
+  end
+  
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = [
+      "cookbooks",
+      "site-cookbooks"
+    ]
+    chef.roles_path = "roles"
+
+    chef.add_role "setup"
+    chef.add_recipe "disable-iptables"
+  end
+end
