@@ -26,7 +26,7 @@ Installation
 > bundle ins --path vendor/bundle
 ```
 
-3. cookbook setup
+3. install cookbooks
 
   ```
 > bundle ex berks install --path cookbooks
@@ -48,11 +48,15 @@ Usage
 http://192.168.33.15:5125/
 ```
 
+![grf](https://dl.dropboxusercontent.com/u/614755/aiming-oss/hrf-grf/grf.png)
+
 - HRForecast
 
 ```
 http://192.168.33.15:5127/
 ```
+
+![hrf](https://dl.dropboxusercontent.com/u/614755/aiming-oss/hrf-grf/hrf.png)
 
 License
 -------
