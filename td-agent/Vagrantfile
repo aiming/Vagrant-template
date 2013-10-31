@@ -36,4 +36,34 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
   end
+
+  config.vm.define :ubuntu do |ubuntu|
+    ubuntu.vm.box = "Ubuntu-12.04-LTS-x86-64"
+    ubuntu.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    ubuntu.vm.network :private_network, ip: "192.168.33.105"
+
+    ubuntu.vm.provider :virtualbox do |vb|
+      vb.gui = false
+      vb.customize [
+        "modifyvm", :id,
+        "--memory", "1024",
+        "--cpus", "2",
+        "--cpuexecutioncap", "75"
+      ]
+    end
+
+    ubuntu.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = [
+        "cookbooks",
+        "site-cookbooks"
+      ]
+
+      chef.roles_path = "roles"
+      chef.data_bags_path = "data_bags"
+
+      chef.add_role "ubuntu"
+    end
+
+  end
+
 end
