@@ -1,0 +1,13 @@
+{
+  "name": "centos",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {},
+  "description": "centos server role",
+  "run_list": [
+    "td-agent",
+    "rbenv"
+  ],
+  "env_run_lists": {} 
+}
