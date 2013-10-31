@@ -12,8 +12,10 @@
 ```
 > bundle ins --path vendor/bundle
 > bundle ex berks install --path cookbooks
-> vagrant up
-> vagrant provision
+> vagrant up centos
+> vagrant provision centos
+> vagrant up ubuntu
+> vagrant provision ubuntu
 ```
 
 # ToDo
