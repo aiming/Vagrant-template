@@ -1,0 +1,4 @@
+site :opscode
+
+cookbook "td-agent", github: "treasure-data/chef-td-agent"
+cookbook "rbenv"
