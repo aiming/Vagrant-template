@@ -18,9 +18,17 @@ rbenv_gem "fluent-plugin-secure-forward" do
   action :install
 end
 
+template "/home/fluentd/fluentd-secure-forward-server.conf" do
+  source "fluentd-secure-forward-server.conf.erb"
+  mode   0644
+  owner  "fluentd"
+  group  "fluentd"
+end
+
 template "/home/fluentd/fluentd-secure-forward-client.conf" do
   source "fluentd-secure-forward-client.conf.erb"
   mode   0644
   owner  "fluentd"
   group  "fluentd"
 end
+
