@@ -1,0 +1,12 @@
+<match mascarpone.**>
+  type secure_forward
+  shared_key    <%= node.default['setup-fluentd']['client']['shared_key'] %>
+  self_hostname <%= node.default['setup-fluentd']['client']['self_hostname'] %>
+
+  <% for host in node.default['setup-fluentd']['client']['servers'] %>
+    <server>
+      host <%= host %> 
+    </server>
+  <% end %>
+
+</match>
