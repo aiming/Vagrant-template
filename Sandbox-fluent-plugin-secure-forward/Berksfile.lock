@@ -1,0 +1,68 @@
+{
+  "sources": {
+    ".": {
+      "path": "."
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "resolver": {
+      "locked_version": "1.1.2"
+    },
+    "git": {
+      "locked_version": "2.7.0"
+    },
+    "rbenv": {
+      "locked_version": "0.7.3",
+      "git": "git://github.com/fnichol/chef-rbenv.git",
+      "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
+    },
+    "github-pubkey": {
+      "locked_version": "0.10.1",
+      "git": "git://github.com/aiming-cookbooks/github-pubkey.git",
+      "ref": "748e7671ce7e24121003818ebfe5f495c4b1b045"
+    },
+    "create-user": {
+      "path": "./site-cookbooks/create-user"
+    },
+    "meta-ruby": {
+      "path": "./site-cookbooks/meta-ruby"
+    },
+    "update-yum-repo": {
+      "path": "./site-cookbooks/update-yum-repo"
+    },
+    "setup-fluentd-user": {
+      "path": "./site-cookbooks/setup-fluentd-user"
+    },
+    "setup-ssh-key": {
+      "path": "./site-cookbooks/setup-ssh-key"
+    },
+    "setup-fluentd": {
+      "path": "./site-cookbooks/setup-fluentd"
+    },
+    "dmg": {
+      "locked_version": "2.0.4"
+    },
+    "windows": {
+      "locked_version": "1.11.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.3.0"
+    },
+    "ruby_build": {
+      "locked_version": "0.8.0"
+    },
+    "java": {
+      "locked_version": "1.15.4"
+    },
+    "aws": {
+      "locked_version": "1.0.0"
+    }
+  }
+}

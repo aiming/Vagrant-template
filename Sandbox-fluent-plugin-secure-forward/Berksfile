@@ -1,0 +1,16 @@
+site :opscode
+
+metadata
+cookbook 'build-essential'
+cookbook 'yum'
+cookbook 'resolver'
+cookbook 'git'
+cookbook 'rbenv', github: 'fnichol/chef-rbenv'
+cookbook 'github-pubkey', github: 'aiming-cookbooks/github-pubkey'
+
+cookbook 'create-user', path: 'site-cookbooks/create-user'
+cookbook 'meta-ruby', path: 'site-cookbooks/meta-ruby'
+cookbook 'update-yum-repo', path: 'site-cookbooks/update-yum-repo'
+cookbook 'setup-fluentd-user', path: 'site-cookbooks/setup-fluentd-user'
+cookbook 'setup-ssh-key', path: 'site-cookbooks/setup-ssh-key'
+cookbook 'setup-fluentd', path: 'site-cookbooks/setup-fluentd'

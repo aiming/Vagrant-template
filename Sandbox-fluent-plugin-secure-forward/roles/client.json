@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {},
+  "description": "client role",
+  "run_list": [
+    "update-yum-repo",
+    "create-user",
+    "meta-ruby",
+    "setup-fluentd-user",
+    "setup-ssh-key",
+    "setup-fluentd"
+  ],
+  "env_run_lists": {} 
+}
