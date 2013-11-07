@@ -1,0 +1,8 @@
+start on startup
+stop  on runlevel [016]
+
+respawn
+
+exec su -c "exec /usr/local/rbenv/shims/fluentd -c /home/fluentd/fluentd-secure-forward-client.conf -d fluent-client.pid -o fluent-client.log"
+
+exec su -c "exec /usr/local/rbenv/shims/fluentd -c /home/fluentd/fluentd-secure-forward-server.conf -d fluent-server.pid -o fluent-server.log"

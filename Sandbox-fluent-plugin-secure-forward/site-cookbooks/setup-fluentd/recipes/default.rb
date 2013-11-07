@@ -32,3 +32,17 @@ template "/home/fluentd/fluentd-secure-forward-client.conf" do
   group  "fluentd"
 end
 
+template "/etc/init/fluentd.conf" do
+  source   "fluentd.service.conf.erb" 
+  owner    "root"
+  group    "root"
+  mode     0644
+  
+  notifies :restart, "service[fluentd]"
+end
+
+service "fluentd" do
+  supports restart: true, reload: true, status: true
+  action   :start
+  provider Chef::Provider::Service::Upstart
+end
