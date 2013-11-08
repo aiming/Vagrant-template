@@ -43,6 +43,12 @@
     "setup-fluentd": {
       "path": "./site-cookbooks/setup-fluentd"
     },
+    "setup-fluentd-client-config": {
+      "path": "./site-cookbooks/setup-fluentd-client-config"
+    },
+    "setup-fluentd-server-config": {
+      "path": "./site-cookbooks/setup-fluentd-server-config"
+    },
     "dmg": {
       "locked_version": "2.0.4"
     },
