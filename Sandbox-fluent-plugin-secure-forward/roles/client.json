@@ -12,7 +12,7 @@
     "setup-fluentd-user",
     "setup-ssh-key",
     "setup-fluentd",
-    "setup-fluentd-client-config"
+    "setup-fluentd-client"
   ],
   "env_run_lists": {} 
 }

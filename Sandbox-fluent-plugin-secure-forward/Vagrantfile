@@ -6,28 +6,60 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
   config.omnibus.chef_version = :latest
 
-  config.vm.box = "CentOS-6.4-x86_64"
-  config.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v0.1.0/centos64-x86_64-20131030.box"
-
-  config.vm.network :private_network, ip: "192.168.33.200"
-
-  config.vm.provider :virtualbox do |vb|
-    vb.gui = false
-  
-    vb.customize [
-      "modifyvm", :id, 
-      "--memory", "512",
-      "--cpus", "1",
-      "--cpuexecutioncap", "80"
-    ]
-  end
-
   config.berkshelf.berksfile_path = "./Berksfile"
   config.berkshelf.enabled = true
 
-  config.vm.provision :chef_solo do |chef|
-    chef.roles_path = "roles"
+  # client
+  config.vm.define :client do |client|
+    client.vm.box = "CentOS-6.4-x86_64"
+    client.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v0.1.0/centos64-x86_64-20131030.box"
 
-    chef.add_role "client"
+    client.vm.network :private_network, ip: "192.168.33.200"
+
+    client.vm.provider :virtualbox do |vb|
+      vb.gui = false
+    
+      vb.customize [
+        "modifyvm", :id, 
+        "--memory", "512",
+        "--cpus", "1",
+        "--cpuexecutioncap", "80"
+      ]
+    end
+
+    client.vm.provision :chef_solo do |chef|
+      chef.roles_path = "roles"
+
+      chef.add_role "client"
+    end
+
   end
+
+  # server
+  config.vm.define :server do |server|
+    server.vm.box = "CentOS-6.4-x86_64"
+    server.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v0.1.0/centos64-x86_64-20131030.box"
+
+    server.vm.network :private_network, ip: "192.168.33.201"
+
+    server.vm.provider :virtualbox do |vb|
+      vb.gui = false
+    
+      vb.customize [
+        "modifyvm", :id, 
+        "--memory", "512",
+        "--cpus", "1",
+        "--cpuexecutioncap", "80"
+      ]
+    end
+
+    server.vm.provision :chef_solo do |chef|
+      chef.roles_path = "roles"
+
+      chef.add_role "server"
+    end
+
+  end
+
+
 end
