@@ -1,16 +1,12 @@
 <match mascarpone.**>
   type secure_forward
-  bind <%= node.default['setup-fluentd']['server']['ip_addr'] %>
+  bind          <%= node.default['setup-fluentd']['client']['ip_addr'] %>
   shared_key    <%= node.default['setup-fluentd']['client']['shared_key'] %>
   self_hostname <%= node.default['setup-fluentd']['client']['self_hostname'] %>
 
-  <server>
-    host <%= node.default['setup-fluentd']['server']['ip_addr'] %> 
-  </server>
-
 <% for name, password in node.default['setup-fluentd']['server']['users'] %>
    <server>
-     host <%= node.default['setup-fluentd']['server']['ip_addr'] %>
+     host     <%= node.default['setup-fluentd']['server']['ip_addr'] %>
      username <%= name.to_s %>
      password <%= password.to_s %>
    </server>
