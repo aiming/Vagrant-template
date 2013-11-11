@@ -1,0 +1,6 @@
+description "fluentd-server"
+start on runlevel [2345]
+stop on runlevel [016]
+respawn
+respawn limit 5 60
+exec sudo -u fluentd /usr/local/rbenv/shims/fluentd -c /home/fluentd/fluentd-secure-forward-server.conf --log /home/fluentd/fluentd-server.log
