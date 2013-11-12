@@ -12,6 +12,8 @@
 Installation
 ------------
 
+**Please update attribute of user name within setup-ssh-keys.**
+
 1. install vagrant plugin.
 
   ```
