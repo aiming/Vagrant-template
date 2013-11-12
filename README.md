@@ -18,6 +18,10 @@ Vagrant template files.
 
 - Sandbox of td-agent.
 
+### [Sandbox of fluent-plugin-secure-forward](Sandbox-fluent-plugin-secure-forward)
+
+- Sandbox of fluent-plugin-secure-forward
+
 # Copyright
 
 Copyright (c) 2013 Aiming Inc.
