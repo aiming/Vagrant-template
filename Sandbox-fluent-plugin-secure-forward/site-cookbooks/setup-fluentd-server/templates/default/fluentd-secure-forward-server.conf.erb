@@ -1,21 +1,11 @@
 <source>
   type secure_forward
-  bind               <%= node.default['setup-fluentd']['server']['ip_addr'] %>
   shared_key         <%= node.default['setup-fluentd']['server']['shared_key'] %>
   self_hostname      <%= node.default['setup-fluentd']['server']['self_hostname'] %>
   cert_auto_generate <%= node.default['setup-fluentd']['server']['cert_auto_generate'] %>
-  authentication     <%= node.default['setup-fluentd']['server']['authentication'] %>
-  allow_anonymous_source no
-
-<% for name, password in node.default['setup-fluentd']['server']['users'] %>
-  <user>
-    username <%= name.to_s %>
-    password <%= password.to_s %>
-  </user>
-<% end %>
-
-  <client>
-    host <%= node.default['setup-fluentd']['client']['ip_addr'] %> 
-  </client>
-
 </source>
+
+<match mascarpone.**>
+  type file
+  path <%= "#{node.default['setup-fluentd']['dir']}/cheese.log" %>
+</match>
