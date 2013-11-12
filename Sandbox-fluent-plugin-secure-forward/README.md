@@ -1,29 +1,47 @@
-# Sandbox::Fluent::Plugin::Secure::Forward
+# Sandbox of fluent-plugin-secure-forward
 
-TODO: Write a gem description
+- Sandbox of [fluent-plugin-secure-forward](https://github.com/tagomoris/fluent-plugin-secure-forward)
 
-## Installation
+# Require of these software
 
-Add this line to your application's Gemfile:
+- [Virtualbox](https://www.virtualbox.org/)
+- [Vagrant](http://www.vagrantup.com/) 
+- [Ruby](https://www.ruby-lang.org/ja/)
 
-    gem 'Sandbox-fluent-plugin-secure-forward'
 
-And then execute:
+Installation
+------------
 
-    $ bundle
+1. install vagrant plugin.
 
-Or install it yourself as:
+  ```
+> vagrant plugin install vagrant-berkshelf
+> vagrant plugin install vagrant-omnibus
+```
 
-    $ gem install Sandbox-fluent-plugin-secure-forward
+2. install gems
 
-## Usage
+  ```
+> bundle ins --path vendor/bundle
+```
 
-TODO: Write usage instructions here
+3. install cookbooks
 
-## Contributing
+  ```
+> bundle ex berks install --path cookbooks
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+4. vagrant up and provision
+
+  ```
+> vagrant up
+> vagrant provision client # or server
+```
+
+# License
+
+MIT
+
+# Author
+
+Copyright (c) 2013 Aiming Inc.
