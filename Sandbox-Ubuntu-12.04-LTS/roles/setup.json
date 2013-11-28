@@ -1,0 +1,12 @@
+{
+  "name": "setup",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {},
+  "description": "setup role",
+  "run_list": [
+    "git",
+    "build-essential"
+  ]
+}

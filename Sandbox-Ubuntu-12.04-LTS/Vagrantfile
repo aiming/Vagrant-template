@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.omnibus.chef_version = :latest
+  config.vm.hostname = "precise64"
+
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+  config.vm.network :private_network, ip: "192.168.33.100"
+
+  config.vm.provider :virtualbox do |vb|
+    vb.gui = false
+  
+    vb.customize [
+      "modifyvm", :id, 
+      "--memory", "1024",
+      "--cpus", "2",
+      "--cpuexecutioncap", "75"
+    ]
+  end
+
+  config.berkshelf.berksfile_path = "./Berksfile"
+  config.berkshelf.enabled = true
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = [
+      "cookbooks",
+      "site-cookbooks"
+    ]
+    chef.roles_path = "roles"
+
+    chef.add_role "setup"
+
+  end
+
+end
