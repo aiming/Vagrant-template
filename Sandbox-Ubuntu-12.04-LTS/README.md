@@ -1,13 +1,6 @@
-# . cookbook
+# Sandbox of Ubuntu 12.04-LTS
 
-# Requirements
-
-# Usage
-
-# Attributes
-
-# Recipes
+Sandbox of Ubuntu 12.04-LTS
 
 # Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Copyright (c) 2013 Aiming Inc.
