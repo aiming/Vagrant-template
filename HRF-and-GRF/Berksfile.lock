@@ -1,5 +1,8 @@
 {
   "sources": {
+    ".": {
+      "path": "."
+    },
     "mysql": {
       "locked_version": "3.0.2"
     },
@@ -7,7 +10,7 @@
       "locked_version": "2.3.0"
     },
     "git": {
-      "locked_version": "2.5.2"
+      "locked_version": "2.7.0"
     },
     "perlbrew": {
       "locked_version": "0.1.0",
@@ -23,6 +26,29 @@
       "locked_version": "0.1.0",
       "git": "git://github.com/aiming-cookbooks/growthforecast.git",
       "ref": "7b43acf1ecba9d43c0a14f02780320d0853f063c"
+    },
+    "disable-iptables": {
+      "locked_version": "0.1.0",
+      "git": "git://github.com/aiming-cookbooks/disable-iptables.git",
+      "ref": "dcfcb258af5381a8e34cf493eaef46470bee1854"
+    },
+    "font-install": {
+      "path": "./site-cookbooks/font-install"
+    },
+    "meta-growthforecast": {
+      "path": "./site-cookbooks/meta-growthforecast"
+    },
+    "meta-hrforecast": {
+      "path": "./site-cookbooks/meta-hrforecast"
+    },
+    "meta-mysql": {
+      "path": "./site-cookbooks/meta-mysql"
+    },
+    "meta-perl": {
+      "path": "./site-cookbooks/meta-perl"
+    },
+    "setup-users": {
+      "path": "./site-cookbooks/setup-users"
     },
     "openssl": {
       "locked_version": "1.1.0"

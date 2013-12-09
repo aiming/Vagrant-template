@@ -2,3 +2,5 @@
 .vagrant
 cookbooks
 vendor/*
+.kitchen/
+.kitchen.local.yml

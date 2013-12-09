@@ -1,5 +1,6 @@
 site :opscode
 
+metadata
 cookbook 'mysql'
 cookbook 'yum'
 cookbook 'git'
@@ -7,3 +8,11 @@ cookbook 'git'
 cookbook 'perlbrew', github: 'aiming-cookbooks/perlbrew'
 cookbook 'hrforecast', github: 'aiming-cookbooks/hrforecast'
 cookbook 'growthforecast', github: 'aiming-cookbooks/growthforecast'
+cookbook 'disable-iptables', github: 'aiming-cookbooks/disable-iptables'
+
+cookbook 'font-install', path: 'site-cookbooks/font-install'
+cookbook 'meta-growthforecast', path: 'site-cookbooks/meta-growthforecast'
+cookbook 'meta-hrforecast', path: 'site-cookbooks/meta-hrforecast'
+cookbook 'meta-mysql', path: 'site-cookbooks/meta-mysql'
+cookbook 'meta-perl', path: 'site-cookbooks/meta-perl'
+cookbook 'setup-users', path: 'site-cookbooks/setup-users'
