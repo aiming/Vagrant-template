@@ -22,9 +22,13 @@ Vagrant template files.
 
 - Sandbox of fluent-plugin-secure-forward
 
+### [Sandbox of chef-docker](Sandbox-chef-docker)
+
+- Sandbox of [chef-docker](https://github.com/bflad/chef-docker)
+
 # Copyright
 
-Copyright (c) 2013 Aiming Inc.
+Copyright (c) 2013-2014 Aiming Inc.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/aiming/vagrant-template/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
