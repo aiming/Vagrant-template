@@ -1,0 +1,60 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.omnibus.chef_version = :latest 
+
+  # CentOS 6.4
+  config.vm.define "centos" do |centos|
+    centos.vm.box = "CentOS-6.4-x86_64"
+    centos.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v0.1.0/centos64-x86_64-20131030.box"
+
+    centos.vm.network :private_network, ip: "192.168.33.50"
+
+    centos.vm.provider :virtualbox do |vb|
+      vb.gui = false
+      vb.customize [
+        "modifyvm", :id, 
+        "--memory", "1024"
+      ]
+    end
+
+    centos.berkshelf.berksfile_path = "./Berksfile"
+    centos.berkshelf.enabled = true
+
+    centos.vm.provision :chef_solo do |chef|
+      chef.run_list = [
+        "recipe[docker]",
+        "recipe[disable-iptables]"
+      ]
+    end
+  end
+
+  # Ubuntu 12.04
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.box = "Ubuntu-12.04"
+    ubuntu.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
+
+    ubuntu.vm.network :private_network, ip: "192.168.33.51"
+
+    ubuntu.vm.provider :virtualbox do |vb|
+      vb.gui = false
+      vb.customize [
+        "modifyvm", :id, 
+        "--memory", "1024"
+      ]
+    end
+
+    ubuntu.berkshelf.berksfile_path = "./Berksfile"
+    ubuntu.berkshelf.enabled = true
+
+    ubuntu.vm.provision :chef_solo do |chef|
+      chef.run_list = [
+        "recipe[docker]",
+        "recipe[disable-iptables]"
+      ]
+    end
+  end
+
+end
