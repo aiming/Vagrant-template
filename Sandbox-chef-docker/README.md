@@ -1,13 +1,18 @@
-# . cookbook
-
-# Requirements
+# setup-chef-docker cookbook
 
 # Usage
 
-# Attributes
+```
+> bundle ins --path vendor/bundle
+> bundle ex kitchen test
+> vagrant up --provision ubuntu
+> vagrant up --provision centos
+```
 
-# Recipes
+# License
+
+MIT.
 
 # Author
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+(c) 2014 Aiming Inc. (info@aiming-inc.com)
